@@ -17,18 +17,6 @@ Se o numero digito for maior do que 9, consideramos 0.
 
 */
 
-// Removendo tudo o que nao é um numero do cpf
-
-// const cpf = "705.484.450-52";
-// const cleanCPF = cpf.replace(/\D+/g, "").split("").map(Number);
-// const arrayCPF = Array.from(cleanCPF);
-
-// console.log(arrayCPF.reduce((ac, val) => ac + Number(val), 0));
-
-// for (let i = 0; i <= 8; i++) {
-//   arrayCPF[i] * (10 - i);
-// }
-
 function ValidateCPF(cpfEnviado) {
   Object.defineProperty(this, "cleanCPF", {
     enumerable: true,
@@ -71,5 +59,6 @@ ValidateCPF.prototype.isSequence = function () {
 };
 
 const cpf = new ValidateCPF("705.484.450-52");
-console.log(cpf.validate());
-// cpf.valida();
+
+if (cpf.validate()) console.log("CPF válido");
+else console.log("CPF inválido");
